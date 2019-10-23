@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TEST" Class="LinqVoucherDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=TEST;Integrated Security=True" SettingsObjectName="Vouchar_Program.Properties.Settings" SettingsPropertyName="TESTConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TblHrEmp" Member="TblHrEmps">
+    <Type Name="TblHrEmp">
+      <Column Name="EmpNo" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FullNameArab" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="FirstNameArab" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SecondNameArab" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ThirdNameArab" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastNameArab" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FullNameEng" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="FirstNameEng" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SecondNameEng" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ThirdNameEng" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastNameEng" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="sponsorNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DepartmentNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CategoryVisa" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CategoryQualification" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Qualification" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nationality" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Religion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BirhtDateG" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="BirhtDateH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="BirthPlace" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="BankNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccountBankNo" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PhoneNum" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="EmailAddress" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SocialStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmpStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmployeeLocation" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PreviousExperince" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Photo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DirectManager" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AlternativeEmp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FamilyStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumberOfChildern" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CampNO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RoomNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CurrentAddress" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="PermanentAddress" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="VisaDetailID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BorderNo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="EntryDateH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EntryDateG" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EntryPlace" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PassportNo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="PassportIssueDateG" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PassportIssueDateH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PassportExpiryDateG" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PassportExpiryDateH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PassportIssuePlace" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IqamaNo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="IqamaIssueDateH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IqamaIssueDateG" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IqamaExpiryDateH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IqamaExpiryDateG" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IqamaIssuePlace" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WPNo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="WPIssueDateH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="WPIssueDateG" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="WPExpiryDateH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="WPExpiryDateG" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="WPPlace" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DriveLicenseNo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="DLIssueDateH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DLIssueDateG" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DLExpiryDateH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DLExpiryDateG" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DLPlace" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DLCalss" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GosiNo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="GosiIssueDateG" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="GosiIssueDateH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="GosiExpiryDateG" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="GosiExpiryDateH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="GosiPlace" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GosiAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="InjuryCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BirthPlaceCity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ImagePath" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="WorkOrderID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DateOfArchive" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ArchiveUserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hired" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Staff" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsurancePolicyNO" Type="System.String" DbType="NVarChar(75)" CanBeNull="true" />
+      <Column Name="InsuranceReferenceNo" Type="System.String" DbType="NVarChar(75)" CanBeNull="true" />
+      <Column Name="InsuranceMembershipNO" Type="System.String" DbType="NVarChar(75)" CanBeNull="true" />
+      <Column Name="InsuranceClass" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsuranceJoiningDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="InsuranceDisJoiningDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="InsuranceNotes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CurrentCategory" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DepartmentID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BloodGroup" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ExpectedVacationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ExpectedVacationDateH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SponsorNoOld" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ImageID" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="UpdatedDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="StatusDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="BankNo2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccountBankNo2" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="UpdatedDateBank2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="BankNo3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccountBankNo3" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="UpdatedDateBank3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ESBDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Guaranteed" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DateOfGuarantee" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PurposeOfGuarantee" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="AmountOfGuarantee" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IBANBank1" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IBANBank2" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IBANBank3" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ResidentIdentityExpiryDateH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ResidentIdentityExpiryDateG" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="VoucherNo" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ExpectedReturnDateOfGuaranteed" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ActualReturnDateOfGuaranteed" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ActionTaken" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="VisaExpiryDateOfGuaranteed" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="WorkPermitCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="WorkPermitNote" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="TblHrEmp_STblVoucher" Member="STblVouchers" ThisKey="EmpNo" OtherKey="Emp_Id" Type="STblVoucher" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_Emp" Member="View_Emps">
+    <Type Name="View_Emp">
+      <Column Name="EmpNo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FullNameArab" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="FullNameEng" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="IqamaNo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.STblVouchers" Member="STblVouchers">
+    <Type Name="STblVoucher">
+      <Column Name="Voucher_id" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Emp_Id" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Payment_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Recived_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="amount" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Payment_Way" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="is_Cheque" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Cheque_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Cheque_No" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Cheque_Bank" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="TblHrEmp_STblVoucher" Member="TblHrEmp" ThisKey="Emp_Id" OtherKey="EmpNo" Type="TblHrEmp" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+</Database>
