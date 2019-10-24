@@ -16,7 +16,7 @@ namespace Vouchar_Program
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Vouchers());
+            Application.Run(new Voucher.XtraForm1());
         }
     }
 }

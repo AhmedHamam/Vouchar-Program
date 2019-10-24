@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Vouchar_Program
+namespace Vouchar_Program.Voucher
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;

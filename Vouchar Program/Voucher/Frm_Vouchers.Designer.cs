@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Vouchers));
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.Voucher_ID = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.sTblVoucherBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Payment_Date = new DevExpress.XtraEditors.DateEdit();
             this.Recived_Date = new DevExpress.XtraEditors.DateEdit();
@@ -46,10 +44,12 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Emp_Name = new DevExpress.XtraEditors.TextEdit();
             this.Payment_Way = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.txt_amount_En_word = new DevExpress.XtraEditors.TextEdit();
+            this.btn_New = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Edit = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_Delete = new DevExpress.XtraEditors.SimpleButton();
+            this.Iqama_no = new DevExpress.XtraEditors.TextEdit();
+            this.txt_amount_ar_word = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -64,6 +64,7 @@
             this.ItemForCheque_No = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForCheque_Bank = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForamount = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lo_amount_words1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -72,11 +73,10 @@
             this.ItemForTblHrEmpEmpNo = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForTblHrEmpFullNameEng = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForTblHrEmpIqamaNo = new DevExpress.XtraLayout.LayoutControlItem();
-            this.Iqama_no = new DevExpress.XtraEditors.TextEdit();
+            this.sTblVoucherBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Voucher_ID.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTblVoucherBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Payment_Date.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Payment_Date.Properties)).BeginInit();
@@ -92,7 +92,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Emp_Name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Payment_Way.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_amount_En_word.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Iqama_no.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_amount_ar_word.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
@@ -107,6 +109,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCheque_No)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCheque_Bank)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForamount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lo_amount_words1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
@@ -115,7 +118,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemForTblHrEmpEmpNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForTblHrEmpFullNameEng)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForTblHrEmpIqamaNo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Iqama_no.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTblVoucherBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonPage2
@@ -138,16 +141,16 @@
             this.dataLayoutControl1.Controls.Add(this.Emp_No);
             this.dataLayoutControl1.Controls.Add(this.Emp_Name);
             this.dataLayoutControl1.Controls.Add(this.Payment_Way);
-            this.dataLayoutControl1.Controls.Add(this.textEdit1);
-            this.dataLayoutControl1.Controls.Add(this.simpleButton1);
+            this.dataLayoutControl1.Controls.Add(this.txt_amount_En_word);
+            this.dataLayoutControl1.Controls.Add(this.btn_New);
             this.dataLayoutControl1.Controls.Add(this.btn_Edit);
-            this.dataLayoutControl1.Controls.Add(this.simpleButton3);
+            this.dataLayoutControl1.Controls.Add(this.btn_Delete);
             this.dataLayoutControl1.Controls.Add(this.Iqama_no);
-            this.dataLayoutControl1.DataSource = this.sTblVoucherBindingSource;
+            this.dataLayoutControl1.Controls.Add(this.txt_amount_ar_word);
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLayoutControl1.Location = new System.Drawing.Point(0, 0);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
-            this.dataLayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(716, 224, 650, 400);
+            this.dataLayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(648, 240, 650, 400);
             this.dataLayoutControl1.Root = this.Root;
             this.dataLayoutControl1.Size = new System.Drawing.Size(879, 519);
             this.dataLayoutControl1.TabIndex = 0;
@@ -155,8 +158,7 @@
             // 
             // Voucher_ID
             // 
-            this.Voucher_ID.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.sTblVoucherBindingSource, "Voucher_id", true));
-            this.Voucher_ID.Location = new System.Drawing.Point(172, 256);
+            this.Voucher_ID.Location = new System.Drawing.Point(172, 141);
             this.Voucher_ID.Name = "Voucher_ID";
             this.Voucher_ID.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.Voucher_ID.Properties.Appearance.Options.UseFont = true;
@@ -172,10 +174,6 @@
             this.Voucher_ID.TabIndex = 4;
             this.Voucher_ID.EditValueChanged += new System.EventHandler(this.Voucher_ID_EditValueChanged);
             // 
-            // sTblVoucherBindingSource
-            // 
-            this.sTblVoucherBindingSource.DataSource = typeof(Vouchar_Program.STblVoucher);
-            // 
             // searchLookUpEdit1View
             // 
             this.searchLookUpEdit1View.Appearance.SelectedRow.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -189,10 +187,9 @@
             // 
             // Payment_Date
             // 
-            this.Payment_Date.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.sTblVoucherBindingSource, "Payment_Date", true));
             this.Payment_Date.EditValue = null;
             this.Payment_Date.Enabled = false;
-            this.Payment_Date.Location = new System.Drawing.Point(581, 256);
+            this.Payment_Date.Location = new System.Drawing.Point(581, 141);
             this.Payment_Date.Name = "Payment_Date";
             this.Payment_Date.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.Payment_Date.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
@@ -207,10 +204,9 @@
             // 
             // Recived_Date
             // 
-            this.Recived_Date.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.sTblVoucherBindingSource, "Recived_Date", true));
             this.Recived_Date.EditValue = null;
             this.Recived_Date.Enabled = false;
-            this.Recived_Date.Location = new System.Drawing.Point(581, 290);
+            this.Recived_Date.Location = new System.Drawing.Point(581, 175);
             this.Recived_Date.Name = "Recived_Date";
             this.Recived_Date.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.Recived_Date.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
@@ -225,9 +221,8 @@
             // 
             // amountTextEdit
             // 
-            this.amountTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.sTblVoucherBindingSource, "amount", true));
             this.amountTextEdit.Enabled = false;
-            this.amountTextEdit.Location = new System.Drawing.Point(172, 512);
+            this.amountTextEdit.Location = new System.Drawing.Point(172, 397);
             this.amountTextEdit.Name = "amountTextEdit";
             this.amountTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.amountTextEdit.Properties.Appearance.Options.UseFont = true;
@@ -237,12 +232,17 @@
             // 
             // Voucher_Type
             // 
-            this.Voucher_Type.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.sTblVoucherBindingSource, "type", true));
             this.Voucher_Type.Enabled = false;
-            this.Voucher_Type.Location = new System.Drawing.Point(172, 478);
+            this.Voucher_Type.Location = new System.Drawing.Point(172, 363);
             this.Voucher_Type.Name = "Voucher_Type";
             this.Voucher_Type.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.Voucher_Type.Properties.Appearance.Options.UseFont = true;
+            this.Voucher_Type.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.Voucher_Type.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.Voucher_Type.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.Voucher_Type.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.Voucher_Type.Properties.AppearanceItemSelected.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.Voucher_Type.Properties.AppearanceItemSelected.Options.UseFont = true;
             this.Voucher_Type.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.Voucher_Type.Properties.Items.AddRange(new object[] {
@@ -254,10 +254,9 @@
             // 
             // Cheque_dateDateEdit
             // 
-            this.Cheque_dateDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.sTblVoucherBindingSource, "Cheque_date", true));
             this.Cheque_dateDateEdit.EditValue = null;
             this.Cheque_dateDateEdit.Enabled = false;
-            this.Cheque_dateDateEdit.Location = new System.Drawing.Point(184, 364);
+            this.Cheque_dateDateEdit.Location = new System.Drawing.Point(184, 249);
             this.Cheque_dateDateEdit.Name = "Cheque_dateDateEdit";
             this.Cheque_dateDateEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.Cheque_dateDateEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
@@ -273,9 +272,8 @@
             // 
             // Cheque_NoTextEdit
             // 
-            this.Cheque_NoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.sTblVoucherBindingSource, "Cheque_No", true));
             this.Cheque_NoTextEdit.Enabled = false;
-            this.Cheque_NoTextEdit.Location = new System.Drawing.Point(184, 398);
+            this.Cheque_NoTextEdit.Location = new System.Drawing.Point(184, 283);
             this.Cheque_NoTextEdit.Name = "Cheque_NoTextEdit";
             this.Cheque_NoTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.Cheque_NoTextEdit.Properties.Appearance.Options.UseFont = true;
@@ -285,9 +283,8 @@
             // 
             // Cheque_BankTextEdit
             // 
-            this.Cheque_BankTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.sTblVoucherBindingSource, "Cheque_Bank", true));
             this.Cheque_BankTextEdit.Enabled = false;
-            this.Cheque_BankTextEdit.Location = new System.Drawing.Point(184, 432);
+            this.Cheque_BankTextEdit.Location = new System.Drawing.Point(184, 317);
             this.Cheque_BankTextEdit.Name = "Cheque_BankTextEdit";
             this.Cheque_BankTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.Cheque_BankTextEdit.Properties.Appearance.Options.UseFont = true;
@@ -297,8 +294,7 @@
             // 
             // Emp_No
             // 
-            this.Emp_No.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.sTblVoucherBindingSource, "TblHrEmp.EmpNo", true));
-            this.Emp_No.Location = new System.Drawing.Point(172, 136);
+            this.Emp_No.Location = new System.Drawing.Point(172, 21);
             this.Emp_No.Name = "Emp_No";
             this.Emp_No.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.Emp_No.Properties.Appearance.Options.UseFont = true;
@@ -320,8 +316,7 @@
             // 
             // Emp_Name
             // 
-            this.Emp_Name.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.sTblVoucherBindingSource, "TblHrEmp.FullNameEng", true));
-            this.Emp_Name.Location = new System.Drawing.Point(172, 170);
+            this.Emp_Name.Location = new System.Drawing.Point(172, 55);
             this.Emp_Name.Name = "Emp_Name";
             this.Emp_Name.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.Emp_Name.Properties.Appearance.Options.UseFont = true;
@@ -331,12 +326,17 @@
             // 
             // Payment_Way
             // 
-            this.Payment_Way.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.sTblVoucherBindingSource, "Payment_Way", true));
             this.Payment_Way.Enabled = false;
-            this.Payment_Way.Location = new System.Drawing.Point(172, 290);
+            this.Payment_Way.Location = new System.Drawing.Point(172, 175);
             this.Payment_Way.Name = "Payment_Way";
             this.Payment_Way.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.Payment_Way.Properties.Appearance.Options.UseFont = true;
+            this.Payment_Way.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.Payment_Way.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.Payment_Way.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.Payment_Way.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.Payment_Way.Properties.AppearanceItemSelected.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.Payment_Way.Properties.AppearanceItemSelected.Options.UseFont = true;
             this.Payment_Way.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.Payment_Way.Properties.Items.AddRange(new object[] {
@@ -347,35 +347,38 @@
             this.Payment_Way.StyleController = this.dataLayoutControl1;
             this.Payment_Way.TabIndex = 16;
             // 
-            // textEdit1
+            // txt_amount_En_word
             // 
-            this.textEdit1.Enabled = false;
-            this.textEdit1.Location = new System.Drawing.Point(172, 546);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Size = new System.Drawing.Size(666, 30);
-            this.textEdit1.StyleController = this.dataLayoutControl1;
-            this.textEdit1.TabIndex = 17;
+            this.txt_amount_En_word.Location = new System.Drawing.Point(172, 431);
+            this.txt_amount_En_word.Name = "txt_amount_En_word";
+            this.txt_amount_En_word.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.txt_amount_En_word.Properties.Appearance.Options.UseFont = true;
+            this.txt_amount_En_word.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.txt_amount_En_word.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.txt_amount_En_word.Properties.ReadOnly = true;
+            this.txt_amount_En_word.Size = new System.Drawing.Size(666, 30);
+            this.txt_amount_En_word.StyleController = this.dataLayoutControl1;
+            this.txt_amount_En_word.TabIndex = 17;
             // 
-            // simpleButton1
+            // btn_New
             // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.Location = new System.Drawing.Point(24, 42);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(269, 38);
-            this.simpleButton1.StyleController = this.dataLayoutControl1;
-            this.simpleButton1.TabIndex = 18;
-            this.simpleButton1.Text = "New";
+            this.btn_New.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btn_New.Appearance.Options.UseFont = true;
+            this.btn_New.ImageOptions.Image = global::Vouchar_Program.Properties.Resources.Add_32x32;
+            this.btn_New.Location = new System.Drawing.Point(24, -73);
+            this.btn_New.Name = "btn_New";
+            this.btn_New.Size = new System.Drawing.Size(269, 38);
+            this.btn_New.StyleController = this.dataLayoutControl1;
+            this.btn_New.TabIndex = 18;
+            this.btn_New.Text = "New";
+            this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
             // 
             // btn_Edit
             // 
             this.btn_Edit.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.btn_Edit.Appearance.Options.UseFont = true;
-            this.btn_Edit.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
-            this.btn_Edit.Location = new System.Drawing.Point(297, 42);
+            this.btn_Edit.ImageOptions.Image = global::Vouchar_Program.Properties.Resources.EditName_32x32;
+            this.btn_Edit.Location = new System.Drawing.Point(297, -73);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(268, 38);
             this.btn_Edit.StyleController = this.dataLayoutControl1;
@@ -383,17 +386,41 @@
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
-            // simpleButton3
+            // btn_Delete
             // 
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(569, 42);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(269, 38);
-            this.simpleButton3.StyleController = this.dataLayoutControl1;
-            this.simpleButton3.TabIndex = 20;
-            this.simpleButton3.Text = "Delete";
+            this.btn_Delete.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.btn_Delete.Appearance.Options.UseFont = true;
+            this.btn_Delete.ImageOptions.Image = global::Vouchar_Program.Properties.Resources.Trash_32x32;
+            this.btn_Delete.Location = new System.Drawing.Point(569, -73);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(269, 38);
+            this.btn_Delete.StyleController = this.dataLayoutControl1;
+            this.btn_Delete.TabIndex = 20;
+            this.btn_Delete.Text = "Delete";
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
+            // 
+            // Iqama_no
+            // 
+            this.Iqama_no.Location = new System.Drawing.Point(581, 21);
+            this.Iqama_no.Name = "Iqama_no";
+            this.Iqama_no.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.Iqama_no.Properties.Appearance.Options.UseFont = true;
+            this.Iqama_no.Size = new System.Drawing.Size(257, 30);
+            this.Iqama_no.StyleController = this.dataLayoutControl1;
+            this.Iqama_no.TabIndex = 15;
+            // 
+            // txt_amount_ar_word
+            // 
+            this.txt_amount_ar_word.Location = new System.Drawing.Point(172, 465);
+            this.txt_amount_ar_word.Name = "txt_amount_ar_word";
+            this.txt_amount_ar_word.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.txt_amount_ar_word.Properties.Appearance.Options.UseFont = true;
+            this.txt_amount_ar_word.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.txt_amount_ar_word.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.txt_amount_ar_word.Properties.ReadOnly = true;
+            this.txt_amount_ar_word.Size = new System.Drawing.Size(666, 30);
+            this.txt_amount_ar_word.StyleController = this.dataLayoutControl1;
+            this.txt_amount_ar_word.TabIndex = 17;
             // 
             // Root
             // 
@@ -402,7 +429,7 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(862, 600);
+            this.Root.Size = new System.Drawing.Size(862, 634);
             this.Root.TextVisible = false;
             // 
             // layoutControlGroup1
@@ -415,7 +442,7 @@
             this.layoutEmployee});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "autoGeneratedGroup0";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(842, 580);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(842, 614);
             // 
             // layoutControlGroup3
             // 
@@ -429,10 +456,11 @@
             this.ItemForPayment_Way,
             this.lo_amount_words,
             this.layout_Cheque,
-            this.ItemForamount});
+            this.ItemForamount,
+            this.lo_amount_words1});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 204);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(842, 376);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(842, 410);
             this.layoutControlGroup3.Text = "Voucher Information";
             // 
             // ItemForVoucher_id
@@ -494,7 +522,7 @@
             // 
             this.lo_amount_words.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 14F);
             this.lo_amount_words.AppearanceItemCaption.Options.UseFont = true;
-            this.lo_amount_words.Control = this.textEdit1;
+            this.lo_amount_words.Control = this.txt_amount_En_word;
             this.lo_amount_words.Location = new System.Drawing.Point(0, 290);
             this.lo_amount_words.Name = "lo_amount_words";
             this.lo_amount_words.Size = new System.Drawing.Size(818, 34);
@@ -557,6 +585,19 @@
             this.ItemForamount.Text = "amount";
             this.ItemForamount.TextSize = new System.Drawing.Size(145, 23);
             // 
+            // lo_amount_words1
+            // 
+            this.lo_amount_words1.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.lo_amount_words1.AppearanceItemCaption.Options.UseFont = true;
+            this.lo_amount_words1.Control = this.txt_amount_ar_word;
+            this.lo_amount_words1.CustomizationFormText = "Amount in Words";
+            this.lo_amount_words1.Location = new System.Drawing.Point(0, 324);
+            this.lo_amount_words1.Name = "lo_amount_words1";
+            this.lo_amount_words1.Size = new System.Drawing.Size(818, 34);
+            this.lo_amount_words1.StartNewLine = true;
+            this.lo_amount_words1.Text = "Amount in Words";
+            this.lo_amount_words1.TextSize = new System.Drawing.Size(145, 23);
+            // 
             // layoutControlGroup5
             // 
             this.layoutControlGroup5.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
@@ -570,7 +611,7 @@
             // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.simpleButton1;
+            this.layoutControlItem1.Control = this.btn_New;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(273, 42);
@@ -579,7 +620,7 @@
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.simpleButton3;
+            this.layoutControlItem3.Control = this.btn_Delete;
             this.layoutControlItem3.Location = new System.Drawing.Point(545, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(273, 42);
@@ -643,17 +684,6 @@
             this.ItemForTblHrEmpIqamaNo.Text = "Iqama No";
             this.ItemForTblHrEmpIqamaNo.TextSize = new System.Drawing.Size(145, 23);
             // 
-            // Iqama_no
-            // 
-            this.Iqama_no.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.sTblVoucherBindingSource, "TblHrEmp.IqamaNo", true));
-            this.Iqama_no.Location = new System.Drawing.Point(581, 136);
-            this.Iqama_no.Name = "Iqama_no";
-            this.Iqama_no.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.Iqama_no.Properties.Appearance.Options.UseFont = true;
-            this.Iqama_no.Size = new System.Drawing.Size(257, 30);
-            this.Iqama_no.StyleController = this.dataLayoutControl1;
-            this.Iqama_no.TabIndex = 15;
-            // 
             // Frm_Vouchers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -666,7 +696,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Voucher_ID.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTblVoucherBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Payment_Date.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Payment_Date.Properties)).EndInit();
@@ -682,7 +711,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Emp_Name.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Payment_Way.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_amount_En_word.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Iqama_no.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_amount_ar_word.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
@@ -697,6 +728,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCheque_No)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForCheque_Bank)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForamount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lo_amount_words1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
@@ -705,7 +737,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemForTblHrEmpEmpNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForTblHrEmpFullNameEng)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForTblHrEmpIqamaNo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Iqama_no.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTblVoucherBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -714,7 +746,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraDataLayout.DataLayoutControl dataLayoutControl1;
         private DevExpress.XtraEditors.SearchLookUpEdit Voucher_ID;
-        private System.Windows.Forms.BindingSource sTblVoucherBindingSource;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
         private DevExpress.XtraEditors.DateEdit Payment_Date;
         private DevExpress.XtraEditors.DateEdit Recived_Date;
@@ -744,15 +775,18 @@
         private DevExpress.XtraEditors.ComboBoxEdit Payment_Way;
         private DevExpress.XtraLayout.LayoutControlItem ItemForPayment_Way;
         private DevExpress.XtraLayout.LayoutControlGroup layout_Cheque;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txt_amount_En_word;
         private DevExpress.XtraLayout.LayoutControlItem lo_amount_words;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btn_New;
         private DevExpress.XtraEditors.SimpleButton btn_Edit;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton btn_Delete;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup5;
         private DevExpress.XtraEditors.TextEdit Iqama_no;
+        private System.Windows.Forms.BindingSource sTblVoucherBindingSource;
+        private DevExpress.XtraEditors.TextEdit txt_amount_ar_word;
+        private DevExpress.XtraLayout.LayoutControlItem lo_amount_words1;
     }
 }

@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vouchar_Program.Voucher;
+using Cheque_Printing_Program;
 
 namespace Vouchar_Program
 {
     public partial class Frm_Vouchers : DevExpress.XtraEditors.XtraForm
     {
+        bool _edit = false;
+        bool _new = false;
         LinqVoucherDataContext linq;
         public Frm_Vouchers()
         {
@@ -55,7 +59,6 @@ namespace Vouchar_Program
             Voucher_ID.Properties.DisplayMember = "Voucher_id";
             Voucher_ID.Properties.ValueMember = "Voucher_id";
         }
-
         private void Voucher_ID_Properties_QueryPopUp(object sender, CancelEventArgs e)
         {
             if (Voucher_ID.Properties.DataSource != null)
@@ -82,13 +85,11 @@ namespace Vouchar_Program
                 }
             }
         }
-
         private void Voucher_ID_EditValueChanged(object sender, EventArgs e)
         {
             ////DataRow row = Voucher_ID.Properties.View.GetRow(Voucher_ID.Properties.GetIndexByKeyValue(Voucher_ID.EditValue))as DataRow;
             //DataRow row = Voucher_ID.Properties.View.GetFocusedDataRow();
             //MessageBox.Show(Voucher_ID.Properties.View.GetFocusedRowCellValue("FullNameEng").ToString());
-
             Payment_Way.Text = Voucher_ID.Properties.View.GetFocusedRowCellValue("Payment_Way")!= null ? Voucher_ID.Properties.View.GetFocusedRowCellValue("Payment_Way").ToString()  : "";
             Voucher_Type.Text = Voucher_ID.Properties.View.GetFocusedRowCellValue("type")!= null ? Voucher_ID.Properties.View.GetFocusedRowCellValue("type").ToString()  : "";
             Payment_Date.Text = Voucher_ID.Properties.View.GetFocusedRowCellValue("Payment_Date")!= null ? Voucher_ID.Properties.View.GetFocusedRowCellValue("Payment_Date").ToString().Substring(0,10)  : "";
@@ -97,6 +98,12 @@ namespace Vouchar_Program
             Cheque_BankTextEdit.Text = Voucher_ID.Properties.View.GetFocusedRowCellValue("Cheque_Bank")!= null ? Voucher_ID.Properties.View.GetFocusedRowCellValue("Cheque_Bank").ToString()  : "";
             Cheque_NoTextEdit.Text = Voucher_ID.Properties.View.GetFocusedRowCellValue("Cheque_No")!= null ? Voucher_ID.Properties.View.GetFocusedRowCellValue("Cheque_No").ToString()  : "";
             amountTextEdit.Text = Voucher_ID.Properties.View.GetFocusedRowCellValue("amount")!= null ? Voucher_ID.Properties.View.GetFocusedRowCellValue("amount").ToString()  : "";
+            if (amountTextEdit.Text != "")
+            {
+                ToWord toWord = new ToWord(Convert.ToDecimal(amountTextEdit.Text),new CurrencyInfo());
+                txt_amount_ar_word.Text = toWord.ConvertToArabic();
+                txt_amount_En_word.Text = toWord.ConvertToEnglish();
+            }
             if (Convert.ToBoolean(Voucher_ID.Properties.View.GetFocusedRowCellValue("is_Cheque") != null ? Voucher_ID.Properties.View.GetFocusedRowCellValue("is_Cheque").ToString()  : "False"))
             {
                 layout_Cheque.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
@@ -108,7 +115,6 @@ namespace Vouchar_Program
                 layout_Cheque.Expanded = false;
             }
         }
-
         private void btn_Edit_Click(object sender, EventArgs e)
         {
             if (btn_Edit.Text == "Edit")
@@ -122,6 +128,11 @@ namespace Vouchar_Program
                 Cheque_NoTextEdit.Enabled = true;
                 amountTextEdit.Enabled = true;
                 btn_Edit.Text = "Cancl";
+                btn_New.Text = "Save";
+                btn_New.ImageOptions.Image = Properties.Resources.Save_32x32;
+                btn_Edit.ImageOptions.Image = Properties.Resources.Close_32x32;
+                _edit = true;
+                _new = false;
             }
             else
             {
@@ -134,7 +145,31 @@ namespace Vouchar_Program
                 Cheque_NoTextEdit.Enabled = false;
                 amountTextEdit.Enabled = false;
                 btn_Edit.Text = "Edit";
+                btn_New.Text = "Add";
+                btn_New.ImageOptions.Image = Properties.Resources.Add_32x32;
+                btn_Edit.ImageOptions.Image = Properties.Resources.EditName_32x32;
             }
+
+        }
+
+        private void btn_New_Click(object sender, EventArgs e)
+        {
+            if (btn_New.Text == "Save" && _edit)
+            {
+            }
+            else if (btn_New.Text == "Save" && _new)
+            {
+
+            }
+            else
+            {
+
+            }
+
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
 
         }
     }
