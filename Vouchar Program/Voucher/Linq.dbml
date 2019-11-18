@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Vouchers" Class="LinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=Vouchers;Integrated Security=True" SettingsObjectName="Vouchar_Program.Properties.Settings" SettingsPropertyName="TESTConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Tb_HrEmp" Member="Tb_HrEmps">
+    <Type Name="Tb_HrEmp">
+      <Column Name="EmpNo" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FullNameArab" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="FullNameEng" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="IqamaNo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Is_deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Tb_HrEmp_Tb_Voucher" Member="Tb_Vouchers" ThisKey="EmpNo" OtherKey="Approved_By" Type="Tb_Voucher" />
+      <Association Name="Tb_HrEmp_Tb_Voucher1" Member="Tb_Vouchers1" ThisKey="EmpNo" OtherKey="Emp_Id" Type="Tb_Voucher" />
+      <Association Name="Tb_HrEmp_Tb_Voucher2" Member="Tb_Vouchers2" ThisKey="EmpNo" OtherKey="Recived_By" Type="Tb_Voucher" />
+      <Association Name="Tb_HrEmp_Tb_Voucher3" Member="Tb_Vouchers3" ThisKey="EmpNo" OtherKey="Requsted_By" Type="Tb_Voucher" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tb_Vouchers" Member="Tb_Vouchers">
+    <Type Name="Tb_Voucher">
+      <Column Name="Serial" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Emp_Id" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Approved_By" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Requsted_By" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Recived_By" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Payment_Way" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Cheque_No" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Cheque_Bank" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Cheque_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Is_Cheque" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Requste_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Approved_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Recived_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="deducted_from_salary" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Is_Approved" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Is_Receved" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Is_deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="is_Repayment" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Tb_Voucher_Tb_Installment" Member="Tb_Installments" ThisKey="Serial" OtherKey="v_id" Type="Tb_Installment" />
+      <Association Name="Tb_HrEmp_Tb_Voucher" Member="AprrovedBy" Storage="_Tb_HrEmp" ThisKey="Approved_By" OtherKey="EmpNo" Type="Tb_HrEmp" IsForeignKey="true" />
+      <Association Name="Tb_HrEmp_Tb_Voucher1" Member="EmployeeName" Storage="_Tb_HrEmp1" ThisKey="Emp_Id" OtherKey="EmpNo" Type="Tb_HrEmp" IsForeignKey="true" />
+      <Association Name="Tb_HrEmp_Tb_Voucher2" Member="RecivedBy" Storage="_Tb_HrEmp2" ThisKey="Recived_By" OtherKey="EmpNo" Type="Tb_HrEmp" IsForeignKey="true" />
+      <Association Name="Tb_HrEmp_Tb_Voucher3" Member="RequstedBy" Storage="_Tb_HrEmp3" ThisKey="Requsted_By" OtherKey="EmpNo" Type="Tb_HrEmp" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vouchers_Types" Member="Vouchers_Types">
+    <Type Name="Vouchers_Type">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="deducted_from_salary" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tb_Installments" Member="Tb_Installmentubdates">
+    <Type Name="Tb_Installmentubdate">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Repayment_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="is_Repayment" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Canceled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="is_deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tb_Installments" Member="Tb_Installments">
+    <Type Name="Tb_Installment">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="v_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Repayment_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="is_Repayment" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Canceled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="is_deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="Tb_Voucher_Tb_Installment" Member="Tb_Voucher" ThisKey="v_id" OtherKey="Serial" Type="Tb_Voucher" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_Installment" Member="View_Installments">
+    <Type Name="View_Installment">
+      <Column Name="FullNameArab" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="v_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Repayment_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="is_Repayment" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FullNameEng" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="IqamaNo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="EmpNo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Serial" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Payment_Way" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Cheque_No" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Cheque_Bank" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Cheque_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Requste_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="installment_Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

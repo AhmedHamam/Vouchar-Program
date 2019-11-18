@@ -1,174 +1,127 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Vouchar_Program.Voucher;
-using Cheque_Printing_Program;
+using DevExpress.XtraEditors;
+using DevExpress.XtraBars;
 
-namespace Vouchar_Program
+namespace Vouchar_Program.Voucher
 {
-    public partial class Frm_Vouchers : DevExpress.XtraEditors.XtraForm
+    public partial class Frm_Vouchers : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        bool _edit = false;
-        bool _new = false;
-        LinqVoucherDataContext linq;
+        LinqDataContext linq;
+        private void Load_Data()
+        {
+            var voucher = (from v in linq.Tb_Vouchers
+                           select
+                         new
+                         {
+                             v.Id,
+                             v.EmployeeName.FullNameEng,
+                             v.Amount,
+                             v.Requste_Date,
+                             v.Payment_Way,
+                             v.Type,
+                         }).ToList();
+            gridControl.DataSource = voucher;
+        }
         public Frm_Vouchers()
         {
             InitializeComponent();
-            linq = new LinqVoucherDataContext(Properties.Settings.Default.ConnectionString);
+            linq = new LinqDataContext(Properties.Settings.Default.ConnectionString);
+            Load_Data();
+        }
+        private void frm_closed(object sender, EventArgs e)
+        {
+            Load_Data();
+        }
+        void bbiPrintPreview_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            gridControl.ShowRibbonPrintPreview();
+        }
+        private void btnNew_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_Add_Vouchers frm = new Frm_Add_Vouchers();
+            frm.Show();
+            frm.FormClosed += frm_closed;
+        }
+        private void btnEdit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_Edit_Vouchers frm = new Frm_Edit_Vouchers();
+            frm.Show();
+            frm.FormClosed += frm_closed;
+        }
+        private void btnDelete_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+        private void btnRefresh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Load_Data();
+        }
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void Emp_IdTextEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            if (Emp_IdTextEdit.Text != "")
+            {
+                var voucher = (from v in linq.Tb_Vouchers
+                               where v.Is_deleted == false && v.Emp_Id == Emp_IdTextEdit.Text
+                               select new
+                               {
+                                   v.Serial,
+                                   v.Id,
+                                   v.EmployeeName.FullNameEng,
+                                   v.Amount,
+                                   v.Requste_Date,
+                                   v.Payment_Way,
+                                   v.Type
+                               }).ToList();
+                gridControl.DataSource = voucher;
+            }
+            else
+            {
+                Load_Data();
+            }
+        }
+        private void Voucher_idTextEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            if (Voucher_idTextEdit.Text != "")
+            {
+                var voucher = (from v in linq.Tb_Vouchers
+                               where v.Is_deleted == false && v.Id == Voucher_idTextEdit.Text
+                               select new
+                               {
+                                   v.Id,
+                                   v.EmployeeName.FullNameEng,
+                                   v.Amount,
+                                   v.Requste_Date,
+                                   v.Payment_Way,
+                                   v.Type
+                               }).ToList();
+                gridControl.DataSource = voucher;
+            }
+            else
+            {
+                Load_Data();
+            }
+
         }
 
         private void Frm_Vouchers_Load(object sender, EventArgs e)
         {
-            List<object> li = (from emp in linq.View_Emps select emp).ToList<object>();
-            Emp_No.Properties.DataSource= li;
-            Emp_No.Properties.DisplayMember = "EmpNo";
-            Emp_No.Properties.ValueMember = "EmpNo";
-            //Emp_Name.Properties.EditFormat
-        }
-
-        private void Emp_No_EditValueChanged(object sender, EventArgs e)
-        {
-            Voucher_ID.Properties.ShowAddNewButton = true;
-            var voucher = (from v in linq.STblVouchers
-                           where v.Emp_Id == Emp_No.Text
-                           select
-                         new
-                         {
-                             v.Voucher_id,
-                             v.TblHrEmp.FullNameEng,
-                             v.amount,
-                             v.Emp_Id,
-                             v.Payment_Date,
-                             v.Payment_Way,
-                             v.type,
-                             v.Recived_Date,
-                             v.is_Cheque,
-                             v.Cheque_Bank,
-                             v.Cheque_date,
-                             v.Cheque_No
-                         }).ToList();
-            Emp_Name.Text = Emp_No.Properties.View.GetFocusedRowCellValue("FullNameEng").ToString();
-            Iqama_no.Text = Emp_No.Properties.View.GetFocusedRowCellValue("IqamaNo").ToString();
-            Voucher_ID.Properties.DataSource = voucher;
-            Voucher_ID.Properties.DisplayMember = "Voucher_id";
-            Voucher_ID.Properties.ValueMember = "Voucher_id";
-        }
-        private void Voucher_ID_Properties_QueryPopUp(object sender, CancelEventArgs e)
-        {
-            if (Voucher_ID.Properties.DataSource != null)
-            {
-                Voucher_ID.Properties.View.Columns["Payment_Date"].Visible = false;
-                Voucher_ID.Properties.View.Columns["Payment_Way"].Visible = false;
-                Voucher_ID.Properties.View.Columns["Recived_Date"].Visible = false;
-                Voucher_ID.Properties.View.Columns["is_Cheque"].Visible = false;
-                Voucher_ID.Properties.View.Columns["Cheque_date"].Visible = false;
-                Voucher_ID.Properties.View.Columns["Cheque_Bank"].Visible = false;
-                Voucher_ID.Properties.View.Columns["Cheque_No"].Visible = false;
-                Voucher_ID.Properties.View.Columns["Voucher_id"].Caption = "Voucher No ";
-                Voucher_ID.Properties.View.Columns["FullNameEng"].Caption = "Employee Name";
-            }
-            else
-            {
-                if (Emp_No.Text=="")
-                {
-                    MessageBox.Show("Please Select Employee");
-                }
-                else
-                {
-                    MessageBox.Show("this Employee dosenot have any vouchers  ");
-                }
-            }
-        }
-        private void Voucher_ID_EditValueChanged(object sender, EventArgs e)
-        {
-            ////DataRow row = Voucher_ID.Properties.View.GetRow(Voucher_ID.Properties.GetIndexByKeyValue(Voucher_ID.EditValue))as DataRow;
-            //DataRow row = Voucher_ID.Properties.View.GetFocusedDataRow();
-            //MessageBox.Show(Voucher_ID.Properties.View.GetFocusedRowCellValue("FullNameEng").ToString());
-            Payment_Way.Text = Voucher_ID.Properties.View.GetFocusedRowCellValue("Payment_Way")!= null ? Voucher_ID.Properties.View.GetFocusedRowCellValue("Payment_Way").ToString()  : "";
-            Voucher_Type.Text = Voucher_ID.Properties.View.GetFocusedRowCellValue("type")!= null ? Voucher_ID.Properties.View.GetFocusedRowCellValue("type").ToString()  : "";
-            Payment_Date.Text = Voucher_ID.Properties.View.GetFocusedRowCellValue("Payment_Date")!= null ? Voucher_ID.Properties.View.GetFocusedRowCellValue("Payment_Date").ToString().Substring(0,10)  : "";
-            Recived_Date.Text = Voucher_ID.Properties.View.GetFocusedRowCellValue("Recived_Date")!= null ? Voucher_ID.Properties.View.GetFocusedRowCellValue("Recived_Date").ToString().Substring(0, 10) : "";
-            Cheque_dateDateEdit.Text = Voucher_ID.Properties.View.GetFocusedRowCellValue("Cheque_date")!= null ? Voucher_ID.Properties.View.GetFocusedRowCellValue("Cheque_date").ToString().Substring(0, 10) : "";
-            Cheque_BankTextEdit.Text = Voucher_ID.Properties.View.GetFocusedRowCellValue("Cheque_Bank")!= null ? Voucher_ID.Properties.View.GetFocusedRowCellValue("Cheque_Bank").ToString()  : "";
-            Cheque_NoTextEdit.Text = Voucher_ID.Properties.View.GetFocusedRowCellValue("Cheque_No")!= null ? Voucher_ID.Properties.View.GetFocusedRowCellValue("Cheque_No").ToString()  : "";
-            amountTextEdit.Text = Voucher_ID.Properties.View.GetFocusedRowCellValue("amount")!= null ? Voucher_ID.Properties.View.GetFocusedRowCellValue("amount").ToString()  : "";
-            if (amountTextEdit.Text != "")
-            {
-                ToWord toWord = new ToWord(Convert.ToDecimal(amountTextEdit.Text),new CurrencyInfo());
-                txt_amount_ar_word.Text = toWord.ConvertToArabic();
-                txt_amount_En_word.Text = toWord.ConvertToEnglish();
-            }
-            if (Convert.ToBoolean(Voucher_ID.Properties.View.GetFocusedRowCellValue("is_Cheque") != null ? Voucher_ID.Properties.View.GetFocusedRowCellValue("is_Cheque").ToString()  : "False"))
-            {
-                layout_Cheque.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
-                layout_Cheque.Expanded = true;
-            }
-            else
-            {
-                layout_Cheque.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
-                layout_Cheque.Expanded = false;
-            }
-        }
-        private void btn_Edit_Click(object sender, EventArgs e)
-        {
-            if (btn_Edit.Text == "Edit")
-            {
-                Payment_Date.Enabled = true;
-                Recived_Date.Enabled = true;
-                Payment_Way.Enabled = true;
-                Voucher_Type.Enabled = true;
-                Cheque_BankTextEdit.Enabled = true;
-                Cheque_dateDateEdit.Enabled = true;
-                Cheque_NoTextEdit.Enabled = true;
-                amountTextEdit.Enabled = true;
-                btn_Edit.Text = "Cancl";
-                btn_New.Text = "Save";
-                btn_New.ImageOptions.Image = Properties.Resources.Save_32x32;
-                btn_Edit.ImageOptions.Image = Properties.Resources.Close_32x32;
-                _edit = true;
-                _new = false;
-            }
-            else
-            {
-                Recived_Date.Enabled = false;
-                Payment_Date.Enabled = false;
-                Payment_Way.Enabled = false;
-                Voucher_Type.Enabled = false;
-                Cheque_BankTextEdit.Enabled = false;
-                Cheque_dateDateEdit.Enabled = false;
-                Cheque_NoTextEdit.Enabled = false;
-                amountTextEdit.Enabled = false;
-                btn_Edit.Text = "Edit";
-                btn_New.Text = "Add";
-                btn_New.ImageOptions.Image = Properties.Resources.Add_32x32;
-                btn_Edit.ImageOptions.Image = Properties.Resources.EditName_32x32;
-            }
 
         }
 
-        private void btn_New_Click(object sender, EventArgs e)
-        {
-            if (btn_New.Text == "Save" && _edit)
-            {
-            }
-            else if (btn_New.Text == "Save" && _new)
-            {
-
-            }
-            else
-            {
-
-            }
-
-        }
-
-        private void btn_Delete_Click(object sender, EventArgs e)
+        private void bbtn_ShowVoucher_ItemClick(object sender, ItemClickEventArgs e)
         {
 
         }

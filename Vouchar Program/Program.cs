@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vouchar_Program.Voucher;
 
 namespace Vouchar_Program
 {
@@ -16,7 +17,10 @@ namespace Vouchar_Program
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Voucher.XtraForm1());
+            //Application.Run(new Voucher.XtraForm1());
+           //Application.Run(new Frm_Main());
+           Application.Run(new Frm_Add_Vouchers());
+           // Application.Run(new frm_VoucherTypes());
         }
     }
 }

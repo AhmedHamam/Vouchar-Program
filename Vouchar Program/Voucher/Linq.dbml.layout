@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Linq">
+  <DataContextMoniker Name="/LinqDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c1af516f-3d72-4e76-bded-b6d97aac3876" isExpanded="false" absoluteBounds="4.625, 0.625, 2, 0.45">
+      <DataClassMoniker Name="/LinqDataContext/Tb_HrEmp" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cc12916f-2d4b-4e9e-8d8e-f073342442d2" absoluteBounds="4.64, 1.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="735a4320-8acb-45ee-a859-9e06a43e03f9" isExpanded="false" absoluteBounds="4.875, 3.875, 2, 0.45">
+      <DataClassMoniker Name="/LinqDataContext/Tb_Voucher" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5e661d42-cf22-4419-9a79-d926dd91cf0f" absoluteBounds="4.8900000000000006, 4.335, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.75 : 1.075); (5.75 : 3.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqDataContext/Tb_HrEmp/Tb_HrEmp_Tb_Voucher" />
+      <nodes>
+        <classShapeMoniker Id="c1af516f-3d72-4e76-bded-b6d97aac3876" />
+        <classShapeMoniker Id="735a4320-8acb-45ee-a859-9e06a43e03f9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.25 : 1.075); (6.25 : 3.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqDataContext/Tb_HrEmp/Tb_HrEmp_Tb_Voucher1" />
+      <nodes>
+        <classShapeMoniker Id="c1af516f-3d72-4e76-bded-b6d97aac3876" />
+        <classShapeMoniker Id="735a4320-8acb-45ee-a859-9e06a43e03f9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.25 : 1.075); (5.25 : 3.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqDataContext/Tb_HrEmp/Tb_HrEmp_Tb_Voucher2" />
+      <nodes>
+        <classShapeMoniker Id="c1af516f-3d72-4e76-bded-b6d97aac3876" />
+        <classShapeMoniker Id="735a4320-8acb-45ee-a859-9e06a43e03f9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 1.075); (5.5 : 3.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LinqDataContext/Tb_HrEmp/Tb_HrEmp_Tb_Voucher3" />
+      <nodes>
+        <classShapeMoniker Id="c1af516f-3d72-4e76-bded-b6d97aac3876" />
+        <classShapeMoniker Id="735a4320-8acb-45ee-a859-9e06a43e03f9" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="ccaaa347-fb81-4970-976c-3dfa26ce6e43" absoluteBounds="0.5, 4.125, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/LinqDataContext/Vouchers_Type" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8e05a5f6-0842-45fb-bd83-6028d1a54f84" absoluteBounds="0.515, 4.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="164bdc38-d7eb-4eac-adb6-4aa4c8889b21" absoluteBounds="0.75, 5.75, 2, 1.9631982421874996">
+      <DataClassMoniker Name="/LinqDataContext/Tb_Installmentubdate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2cde384c-ba99-47cb-b67e-33f589684357" absoluteBounds="0.765, 6.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8aaf6092-f316-4f7e-aff7-cbeb92dbc204" absoluteBounds="1.625, 1.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/LinqDataContext/Tb_Installment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="523fbfde-c079-4744-ae85-956b00d36227" absoluteBounds="1.6400000000000001, 1.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.875 : 3.96875); (3.09375 : 3.96875); (3.09375 : 3.53049967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqDataContext/Tb_Voucher/Tb_Voucher_Tb_Installment" />
+      <nodes>
+        <classShapeMoniker Id="735a4320-8acb-45ee-a859-9e06a43e03f9" />
+        <classShapeMoniker Id="8aaf6092-f316-4f7e-aff7-cbeb92dbc204" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="395e97aa-0330-47ba-857f-05a7076895bb" isExpanded="false" absoluteBounds="4.25, 4.625, 2, 0.45">
+      <DataClassMoniker Name="/LinqDataContext/View_Installment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ee50be80-93ff-46f4-b40d-5745d1242b1c" absoluteBounds="4.265, 5.085, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
