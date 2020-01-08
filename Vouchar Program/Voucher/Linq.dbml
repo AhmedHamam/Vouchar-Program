@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Vouchers" Class="LinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=Vouchers;Integrated Security=True" SettingsObjectName="Vouchar_Program.Properties.Settings" SettingsPropertyName="TESTConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=NASSACO-PC\HAKEM;Initial Catalog=Vouchers;User ID=moh" SettingsObjectName="Vouchar_Program.Properties.Settings" SettingsPropertyName="VouchersConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Tb_HrEmp" Member="Tb_HrEmps">
     <Type Name="Tb_HrEmp">
       <Column Name="EmpNo" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -48,16 +48,6 @@
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="deducted_from_salary" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Tb_Installments" Member="Tb_Installmentubdates">
-    <Type Name="Tb_Installmentubdate">
-      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Repayment_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="is_Repayment" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="Canceled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="is_deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tb_Installments" Member="Tb_Installments">

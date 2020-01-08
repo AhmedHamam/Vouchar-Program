@@ -39,16 +39,13 @@ namespace Vouchar_Program.Voucher
     partial void InsertVouchers_Type(Vouchers_Type instance);
     partial void UpdateVouchers_Type(Vouchers_Type instance);
     partial void DeleteVouchers_Type(Vouchers_Type instance);
-    partial void InsertTb_Installmentubdate(Tb_Installmentubdate instance);
-    partial void UpdateTb_Installmentubdate(Tb_Installmentubdate instance);
-    partial void DeleteTb_Installmentubdate(Tb_Installmentubdate instance);
     partial void InsertTb_Installment(Tb_Installment instance);
     partial void UpdateTb_Installment(Tb_Installment instance);
     partial void DeleteTb_Installment(Tb_Installment instance);
     #endregion
 		
 		public LinqDataContext() : 
-				base(global::Vouchar_Program.Properties.Settings.Default.TESTConnectionString, mappingSource)
+				base(global::Vouchar_Program.Properties.Settings.Default.VouchersConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -98,14 +95,6 @@ namespace Vouchar_Program.Voucher
 			get
 			{
 				return this.GetTable<Vouchers_Type>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Tb_Installmentubdate> Tb_Installmentubdates
-		{
-			get
-			{
-				return this.GetTable<Tb_Installmentubdate>();
 			}
 		}
 		
@@ -1215,188 +1204,6 @@ namespace Vouchar_Program.Voucher
 					this._deducted_from_salary = value;
 					this.SendPropertyChanged("deducted_from_salary");
 					this.Ondeducted_from_salaryChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tb_Installments")]
-	public partial class Tb_Installmentubdate : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private long _id;
-		
-		private System.Nullable<System.DateTime> _Repayment_Date;
-		
-		private System.Nullable<bool> _is_Repayment;
-		
-		private System.Nullable<bool> _Canceled;
-		
-		private System.Nullable<bool> _is_deleted;
-		
-		private System.Nullable<decimal> _Amount;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(long value);
-    partial void OnidChanged();
-    partial void OnRepayment_DateChanging(System.Nullable<System.DateTime> value);
-    partial void OnRepayment_DateChanged();
-    partial void Onis_RepaymentChanging(System.Nullable<bool> value);
-    partial void Onis_RepaymentChanged();
-    partial void OnCanceledChanging(System.Nullable<bool> value);
-    partial void OnCanceledChanged();
-    partial void Onis_deletedChanging(System.Nullable<bool> value);
-    partial void Onis_deletedChanged();
-    partial void OnAmountChanging(System.Nullable<decimal> value);
-    partial void OnAmountChanged();
-    #endregion
-		
-		public Tb_Installmentubdate()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public long id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Repayment_Date", DbType="Date")]
-		public System.Nullable<System.DateTime> Repayment_Date
-		{
-			get
-			{
-				return this._Repayment_Date;
-			}
-			set
-			{
-				if ((this._Repayment_Date != value))
-				{
-					this.OnRepayment_DateChanging(value);
-					this.SendPropertyChanging();
-					this._Repayment_Date = value;
-					this.SendPropertyChanged("Repayment_Date");
-					this.OnRepayment_DateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_is_Repayment", DbType="Bit")]
-		public System.Nullable<bool> is_Repayment
-		{
-			get
-			{
-				return this._is_Repayment;
-			}
-			set
-			{
-				if ((this._is_Repayment != value))
-				{
-					this.Onis_RepaymentChanging(value);
-					this.SendPropertyChanging();
-					this._is_Repayment = value;
-					this.SendPropertyChanged("is_Repayment");
-					this.Onis_RepaymentChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Canceled", DbType="Bit")]
-		public System.Nullable<bool> Canceled
-		{
-			get
-			{
-				return this._Canceled;
-			}
-			set
-			{
-				if ((this._Canceled != value))
-				{
-					this.OnCanceledChanging(value);
-					this.SendPropertyChanging();
-					this._Canceled = value;
-					this.SendPropertyChanged("Canceled");
-					this.OnCanceledChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_is_deleted", DbType="Bit")]
-		public System.Nullable<bool> is_deleted
-		{
-			get
-			{
-				return this._is_deleted;
-			}
-			set
-			{
-				if ((this._is_deleted != value))
-				{
-					this.Onis_deletedChanging(value);
-					this.SendPropertyChanging();
-					this._is_deleted = value;
-					this.SendPropertyChanged("is_deleted");
-					this.Onis_deletedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Decimal(18,2)")]
-		public System.Nullable<decimal> Amount
-		{
-			get
-			{
-				return this._Amount;
-			}
-			set
-			{
-				if ((this._Amount != value))
-				{
-					this.OnAmountChanging(value);
-					this.SendPropertyChanging();
-					this._Amount = value;
-					this.SendPropertyChanged("Amount");
-					this.OnAmountChanged();
 				}
 			}
 		}

@@ -242,11 +242,12 @@ namespace Vouchar_Program
         }
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
-            rpVoucher rp_vocher = new rpVoucher();
+            this.Close();
+            //rpVoucher rp_vocher = new rpVoucher();
 
-            rp_vocher.DataSource = (from I in linq.View_Installments
-                                    where I.v_id == Int64.Parse(Voucher_Serial.Text) - 1
-                                    select I);
+            //rp_vocher.DataSource = (from I in linq.View_Installments
+            //                        where I.v_id == Int64.Parse(Voucher_Serial.Text) - 1
+            //                        select I);
             //rp_vocher.DataSource = (from I in linq.Tb_Installments
             //                        join V in linq.Tb_Vouchers on I.v_id equals V.Serial
             //                        join E in linq.Tb_HrEmps on V.==
@@ -256,7 +257,7 @@ namespace Vouchar_Program
             //                            v.Amount, v.Repayment_Date,v.Tb_Vouchers.Select
             //                        }
             //                         ).ToList();
-            rp_vocher.ShowPreview();
+           // rp_vocher.ShowPreview();
             //Close();
         }
 

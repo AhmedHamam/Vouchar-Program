@@ -18,8 +18,8 @@ namespace Vouchar_Program
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Voucher.XtraForm1());
-           //Application.Run(new Frm_Main());
-           Application.Run(new Frm_Add_Vouchers());
+           Application.Run(new Frm_Main());
+          // Application.Run(new Frm_Add_Vouchers());
            // Application.Run(new frm_VoucherTypes());
         }
     }

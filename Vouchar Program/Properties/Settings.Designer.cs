@@ -25,7 +25,8 @@ namespace Vouchar_Program.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=Vouchers;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NASSACO-PC\\HAKEM;Initial Catalog=Vouchers;User ID=moh;Password=man_r2" +
+            "005;")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));
@@ -38,30 +39,11 @@ namespace Vouchar_Program.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=Vouchers;Integrated Security=True")]
-        public string TESTConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NASSACO-PC\\HAKEM;Initial Catalog=Vouchers;User ID=moh;Password=man_r2" +
+            "005")]
+        public string VouchersConnectionString1 {
             get {
-                return ((string)(this["TESTConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=Vouchers;Integrated Security=True")]
-        public string TESTConnectionString1 {
-            get {
-                return ((string)(this["TESTConnectionString1"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=Vouchers;Integrated Security=True")]
-        public string VouchersConnectionString {
-            get {
-                return ((string)(this["VouchersConnectionString"]));
+                return ((string)(this["VouchersConnectionString1"]));
             }
         }
     }
