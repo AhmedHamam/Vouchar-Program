@@ -1,6 +1,6 @@
 ﻿namespace Vouchar_Program
 {
-    partial class frm_VoucherTypes
+    partial class Frm_VoucherTypes
     {
         /// <summary>
         /// Required designer variable.
@@ -74,7 +74,7 @@
             this.bbtn_Add.Id = 1;
             this.bbtn_Add.ImageOptions.SvgImage = global::Vouchar_Program.Properties.Resources.actions_addcircled;
             this.bbtn_Add.Name = "bbtn_Add";
-            this.bbtn_Add.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtn_Add_ItemClick);
+            this.bbtn_Add.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Bbtn_Add_ItemClick);
             // 
             // bbtn_Save
             // 
@@ -83,7 +83,7 @@
             this.bbtn_Save.ImageOptions.Image = global::Vouchar_Program.Properties.Resources.Save_32x32;
             this.bbtn_Save.Name = "bbtn_Save";
             this.bbtn_Save.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.bbtn_Save.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtn_Save_ItemClick);
+            this.bbtn_Save.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Bbtn_Save_ItemClick);
             // 
             // bbtn_Delete
             // 
@@ -92,7 +92,7 @@
             this.bbtn_Delete.ImageOptions.Image = global::Vouchar_Program.Properties.Resources.Trash_32x32;
             this.bbtn_Delete.Name = "bbtn_Delete";
             this.bbtn_Delete.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.bbtn_Delete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtn_Delete_ItemClick);
+            this.bbtn_Delete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Bbtn_Delete_ItemClick);
             // 
             // bbtnprint
             // 
@@ -100,7 +100,7 @@
             this.bbtnprint.Id = 5;
             this.bbtnprint.ImageOptions.SvgImage = global::Vouchar_Program.Properties.Resources.print;
             this.bbtnprint.Name = "bbtnprint";
-            this.bbtnprint.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnprint_ItemClick);
+            this.bbtnprint.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Bbtnprint_ItemClick);
             // 
             // bbtn_Edit
             // 
@@ -108,7 +108,7 @@
             this.bbtn_Edit.Id = 6;
             this.bbtn_Edit.ImageOptions.SvgImage = global::Vouchar_Program.Properties.Resources.editquery;
             this.bbtn_Edit.Name = "bbtn_Edit";
-            this.bbtn_Edit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtn_Edit_ItemClick);
+            this.bbtn_Edit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Bbtn_Edit_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -203,7 +203,7 @@
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Voucher Type";
-            this.Load += new System.EventHandler(this.frm_VoucherTypes_Load);
+            this.Load += new System.EventHandler(this.Frm_VoucherTypes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vouchersTypeBindingSource)).EndInit();

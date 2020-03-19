@@ -43,7 +43,7 @@
             this.btn_Vouchers.Size = new System.Drawing.Size(131, 62);
             this.btn_Vouchers.TabIndex = 1;
             this.btn_Vouchers.Text = "Vouchers";
-            this.btn_Vouchers.Click += new System.EventHandler(this.btn_Vouchers_Click);
+            this.btn_Vouchers.Click += new System.EventHandler(this.Btn_Vouchers_Click);
             // 
             // btn_Employee
             // 
@@ -55,7 +55,7 @@
             this.btn_Employee.Size = new System.Drawing.Size(124, 62);
             this.btn_Employee.TabIndex = 0;
             this.btn_Employee.Text = "Employee";
-            this.btn_Employee.Click += new System.EventHandler(this.btn_Employee_Click);
+            this.btn_Employee.Click += new System.EventHandler(this.Btn_Employee_Click);
             // 
             // btn_VoucherTypes
             // 
@@ -67,7 +67,7 @@
             this.btn_VoucherTypes.Size = new System.Drawing.Size(185, 62);
             this.btn_VoucherTypes.TabIndex = 2;
             this.btn_VoucherTypes.Text = "Vouchers Types";
-            this.btn_VoucherTypes.Click += new System.EventHandler(this.btn_VoucherTypes_Click);
+            this.btn_VoucherTypes.Click += new System.EventHandler(this.Btn_VoucherTypes_Click);
             // 
             // Frm_Main
             // 

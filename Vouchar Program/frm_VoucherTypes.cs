@@ -12,16 +12,16 @@ using Vouchar_Program.Voucher;
 
 namespace Vouchar_Program
 {
-    public partial class frm_VoucherTypes : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class Frm_VoucherTypes : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         LinqDataContext linq;
-        public frm_VoucherTypes()
+        public Frm_VoucherTypes()
         {
             InitializeComponent();
-            linq = new LinqDataContext(Properties.Settings.Default.ConnectionString);
+            linq = new LinqDataContext();
         }
         List<Vouchers_Type> types;
-        private void frm_VoucherTypes_Load(object sender, EventArgs e)
+        private void Frm_VoucherTypes_Load(object sender, EventArgs e)
         {
             types= (from t in linq.Vouchers_Types select t).ToList();
             gridControl1.DataSource =types;
@@ -33,12 +33,12 @@ namespace Vouchar_Program
             gridView1.Columns[1].OptionsColumn.ReadOnly = true;
             gridView1.Columns[2].OptionsColumn.ReadOnly = true;
         }
-        private void allow_Edit()
+        private void Allow_Edit()
         {
             gridView1.Columns[1].OptionsColumn.ReadOnly = false;
             gridView1.Columns[2].OptionsColumn.ReadOnly = false;
         }
-        private void bbtn_Add_ItemClick(object sender, ItemClickEventArgs e)
+        private void Bbtn_Add_ItemClick(object sender, ItemClickEventArgs e)
         {
             Vouchers_Type v = new Vouchers_Type();
             if (types.Count > 0)
@@ -52,19 +52,19 @@ namespace Vouchar_Program
             v.deducted_from_salary = true;
             v.Type = "Voucher";
             types.Add(v);
-            allow_Edit();
+            Allow_Edit();
             gridView1.Columns[0].OptionsColumn.ReadOnly = true;
             gridView1.RefreshData();
         }
-        private void bbtn_Edit_ItemClick(object sender, ItemClickEventArgs e)
+        private void Bbtn_Edit_ItemClick(object sender, ItemClickEventArgs e)
         {
-            allow_Edit();
+            Allow_Edit();
         }
-        private void bbtnprint_ItemClick(object sender, ItemClickEventArgs e)
+        private void Bbtnprint_ItemClick(object sender, ItemClickEventArgs e)
         {
             gridControl1.ShowRibbonPrintPreview();
         }
-        private void bbtn_Save_ItemClick(object sender, ItemClickEventArgs e)
+        private void Bbtn_Save_ItemClick(object sender, ItemClickEventArgs e)
         {
             gridView1.PostEditor();
             gridView1.RefreshData();
@@ -88,7 +88,7 @@ namespace Vouchar_Program
             }
             MessageBox.Show("Saved Successfully");
         }
-        private void bbtn_Delete_ItemClick(object sender, ItemClickEventArgs e)
+        private void Bbtn_Delete_ItemClick(object sender, ItemClickEventArgs e)
         {
             var x = (from t in linq.Vouchers_Types
                      where t.id ==int.Parse (gridView1.GetFocusedRowCellDisplayText("id"))

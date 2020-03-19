@@ -23,21 +23,21 @@ namespace Vouchar_Program
 
         }
 
-        private void btn_Employee_Click(object sender, EventArgs e)
+        private void Btn_Employee_Click(object sender, EventArgs e)
         {
             Frm_Employees frm = new Frm_Employees();
             frm.Show();
         }
 
-        private void btn_Vouchers_Click(object sender, EventArgs e)
+        private void Btn_Vouchers_Click(object sender, EventArgs e)
         {
             Frm_Vouchers frm = new Frm_Vouchers();
             frm.Show();
         }
 
-        private void btn_VoucherTypes_Click(object sender, EventArgs e)
+        private void Btn_VoucherTypes_Click(object sender, EventArgs e)
         {
-            frm_VoucherTypes frm = new frm_VoucherTypes();
+            Frm_VoucherTypes frm = new Frm_VoucherTypes();
             frm.Show();
         }
     }
